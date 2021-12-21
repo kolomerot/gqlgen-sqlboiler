@@ -33,8 +33,6 @@ import (
 	{{ end }}
 )
 
-
-{{ if .HasRoot }}
 	type {{.ResolverType}} struct {
 		db *sql.DB
 	}
@@ -44,7 +42,6 @@ import (
 			db: db,
 		}
 	}
-{{ end }}
 
 const inputKey = "input"
 
