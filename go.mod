@@ -9,6 +9,7 @@ require (
 	github.com/rs/zerolog v1.20.0
 	github.com/vektah/gqlparser/v2 v2.0.1
 	github.com/volatiletech/strmangle v0.0.1
+	github.com/web-ridge/gqlgen-sqlboiler/v3 v3.2.5
 	golang.org/x/mod v0.4.2
 	golang.org/x/tools v0.1.5
 )
