@@ -78,7 +78,7 @@ import (
 
         func {{ .BoilerModel.Name }}SortDirection(ordering []*{{ $.Frontend.PackageName }}.{{ .BoilerModel.Name }}Ordering) boilergql.SortDirection {
             for _, o := range ordering {
-                return o.Direction
+                return boilergql.SortDirection(o.Direction)
             }
             return boilergql.SortDirectionAsc
         }
@@ -145,7 +145,7 @@ import (
 		func {{ .BoilerModel.Name }}CursorType(ordering []*{{ $.Frontend.PackageName }}.{{ .BoilerModel.Name }}Ordering) boilergql.CursorType {
 			countDirection, result := boilergql.CursorTypeCounter()
 			for _, o := range ordering {
-				countDirection(o.Direction)
+				countDirection(boilergql.SortDirection(o.Direction))
 			}
 			return result()
 		}
@@ -181,7 +181,7 @@ import (
 				if column != "" {
 					a = append(a, qm.OrderBy(boilergql.GetOrderBy(
 						column,
-						boilergql.GetDirection(order.Direction, reverse),
+						boilergql.GetDirection(boilergql.SortDirection(order.Direction), reverse),
 					)))
 				}
 			}
