@@ -766,12 +766,12 @@ func mergeContentInFile(content, outputFile string) error {
 	if err := writeContentToFile(content, newOutputFile); err != nil {
 		return fmt.Errorf("could not write schema to disk: %v", err)
 	}
-	//if err := formatFile(outputFile); err != nil {
-	//	return fmt.Errorf("could not format with prettier %v", err)
-	//}
-	//if err := formatFile(newOutputFile); err != nil {
-	//	return fmt.Errorf("could not format with prettier%v", err)
-	//}
+	if err := formatFile(outputFile); err != nil {
+		return fmt.Errorf("could not format with prettier %v", err)
+	}
+	if err := formatFile(newOutputFile); err != nil {
+		return fmt.Errorf("could not format with prettier%v", err)
+	}
 
 	// Three way merging done based on this answer
 	// https://stackoverflow.com/a/9123563/2508481
