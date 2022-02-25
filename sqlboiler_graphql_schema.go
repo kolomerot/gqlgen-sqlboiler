@@ -710,7 +710,7 @@ func toGraphQLType(boilerField *BoilerField) string {
 		return boilerField.Enum.Name
 	}
 
-	if strings.HasSuffix(lowerFieldName, "id") {
+	if strings.HasPrefix(lowerFieldName, "id") {
 		return "ID"
 	}
 	if strings.Contains(lowerBoilerType, "string") {
