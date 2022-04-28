@@ -11,7 +11,7 @@ import (
 
 	"github.com/99designs/gqlgen/codegen"
 	"github.com/99designs/gqlgen/plugin"
-	"github.com/web-ridge/gqlgen-sqlboiler/v3/templates"
+	"github.com/kolomerot/gqlgen-sqlboiler/v3/templates"
 )
 
 func NewResolverPlugin(output, backend, frontend Config, resolverPluginConfig ResolverPluginConfig) plugin.Plugin {
